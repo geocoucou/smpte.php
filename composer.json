@@ -18,12 +18,12 @@
     },
     "autoload": {
         "psr-4": {
-            "geocoucou\\SMPTE\\": "src/"
+            "FireworkWeb\\SMPTE\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "geocoucou\\Tests\\": "tests/"
+            "FireworkWeb\\Tests\\": "tests/"
         }
     }
 }

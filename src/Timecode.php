@@ -102,7 +102,7 @@ class Timecode
         $times = preg_split('/(:|;)/', $time);
         list($hours, $minutes, $seconds, $frames) = array_map('intval', $times);
 
-        $roundFrameRate = round($frameRate);
+        $roundFrameRate = $this->dropFrame ? round($this->frameRate) : $this->frameRate;
         $frameCount = self::calculateFrameCount($roundFrameRate, $hours, $minutes, $seconds, $frames);
 
         if ($dropFrame) {
@@ -415,7 +415,7 @@ class Timecode
         $this->frameCount = (int) $frameCount;
 
         $recalculatedFrameCount = $this->dropFrame ? $this->calculateFrameCountWithDropFrame() : $this->frameCount;
-        $frameRate = round($this->frameRate);
+        $frameRate =  $this->dropFrame ? round($this->frameRate) : $this->frameRate;
 
         $this->hours = (int) (floor($recalculatedFrameCount / ($frameRate * 3600)) % 24);
         $this->minutes = (int) (floor($recalculatedFrameCount / ($frameRate * 60)) % 60);

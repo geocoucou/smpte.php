@@ -1,12 +1,12 @@
 {
-    "name": "fireworkweb/smpte",
+    "name": "geocoucou/smpte",
     "description": "Easily deal with Timecode SMPTE format in PHP",
     "keywords": ["timecode", "smpte", "subtitle"],
     "license": "MIT",
     "authors": [
         {
             "name": "Firework Web & Mobile",
-            "email": "contact@fireworkweb.com"
+            "email": "lvincelette@gmail.com"
         }
     ],
     "type": "project",
@@ -18,12 +18,12 @@
     },
     "autoload": {
         "psr-4": {
-            "FireworkWeb\\SMPTE\\": "src/"
+            "geocoucou\\SMPTE\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "FireworkWeb\\Tests\\": "tests/"
+            "geocoucou\\Tests\\": "tests/"
         }
     }
 }

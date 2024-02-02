@@ -420,7 +420,7 @@ class Timecode
         $this->hours = (int) (floor($recalculatedFrameCount / ($frameRate * 3600)) % 24);
         $this->minutes = (int) (floor($recalculatedFrameCount / ($frameRate * 60)) % 60);
         $this->seconds = (int) (floor($recalculatedFrameCount / $frameRate) % 60);
-        $this->frames = (int) ($recalculatedFrameCount % $frameRate);
+        $this->frames = (int) (((1000000 * $recalculatedFrameCount) % (1000000 * $frameRate)) / 1000000);
 
         return $this;
     }
